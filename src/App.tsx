@@ -1,12 +1,22 @@
 import React from "react";
-import Search from "./Search";
-import UserCard from "./UserCard";
+import UserCard from "./components/UserCard";
+import Search from "./components/Search";
+import { Box } from "@mui/material";
 
 const App = () => {
   return (
     <>
-      <Search />
-      <UserCard />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Search />
+        <UserCard />
+      </Box>
     </>
   );
 };

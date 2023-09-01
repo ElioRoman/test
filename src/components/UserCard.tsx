@@ -9,21 +9,14 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import { Store } from "./store";
+import { Store } from "../store";
 import { observer } from "mobx-react-lite";
 
 const UserCard = observer(() => {
   const { userData, errorMessage, isLoading } = Store;
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        m: 1,
-      }}
-    >
+    <Box sx={{ width: "300px", mt: 2 }}>
       {isLoading ? (
         <Box sx={{ width: "100%" }}>
           <LinearProgress />
@@ -38,7 +31,7 @@ const UserCard = observer(() => {
             subheader={userData.bio}
           />
           <CardContent>
-            <Link target="_blank" href={userData.url} underline="none">
+            <Link target="_blank" href={userData.html_url} underline="none">
               Link
             </Link>
           </CardContent>

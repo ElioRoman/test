@@ -5,7 +5,7 @@ interface IUserData {
   name: string;
   bio: string;
   avatar_url: string;
-  url: string;
+  html_url: string;
 }
 
 class Data {
@@ -25,6 +25,7 @@ class Data {
       const { data } = yield axios.get(`https://api.github.com/users/${name}`);
       this.userData = data;
       this.isLoading = false;
+      console.log(data);
     } catch (error: any) {
       this.errorMessage = error.response?.data?.message || error.message;
       this.isLoading = false;
